@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 The beginning of the journey | Omics data analysis in R</title>
+  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 The beginning of the journey | Omics data analysis in R" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 The beginning of the journey | Omics data analysis in R" />
+  
+  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+<meta name="author" content="Tu Hu" />
+
+
+<meta name="date" content="2022-05-04" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="intro.html"/>
+<link rel="next" href="methods.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Preface</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#reference"><i class="fa fa-check"></i><b>1.1</b> Reference</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
+<li class="chapter" data-level="3" data-path="the-beginning-of-the-journey.html"><a href="the-beginning-of-the-journey.html"><i class="fa fa-check"></i><b>3</b> The beginning of the journey</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="the-beginning-of-the-journey.html"><a href="the-beginning-of-the-journey.html#day-1"><i class="fa fa-check"></i><b>3.1</b> Day 1</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="the-beginning-of-the-journey.html"><a href="the-beginning-of-the-journey.html#five-steps-in-omics-data-analysis"><i class="fa fa-check"></i><b>3.1.1</b> Five steps in omics data analysis</a></li>
+<li class="chapter" data-level="3.1.2" data-path="the-beginning-of-the-journey.html"><a href="the-beginning-of-the-journey.html#getting-started-with-r"><i class="fa fa-check"></i><b>3.1.2</b> Getting started with R</a></li>
+<li class="chapter" data-level="3.1.3" data-path="the-beginning-of-the-journey.html"><a href="the-beginning-of-the-journey.html#statistics"><i class="fa fa-check"></i><b>3.1.3</b> Statistics</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="the-beginning-of-the-journey.html"><a href="the-beginning-of-the-journey.html#day-2"><i class="fa fa-check"></i><b>3.2</b> Day 2</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="the-beginning-of-the-journey.html"><a href="the-beginning-of-the-journey.html#r-loading-a-package-and-get-help"><i class="fa fa-check"></i><b>3.2.1</b> R: loading a package, and get help</a></li>
+<li class="chapter" data-level="3.2.2" data-path="the-beginning-of-the-journey.html"><a href="the-beginning-of-the-journey.html#r-the-basics"><i class="fa fa-check"></i><b>3.2.2</b> R: the basics</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>4</b> Methods</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="methods.html"><a href="methods.html#math-example"><i class="fa fa-check"></i><b>4.1</b> math example</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i><b>5</b> Applications</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="applications.html"><a href="applications.html#example-one"><i class="fa fa-check"></i><b>5.1</b> Example one</a></li>
+<li class="chapter" data-level="5.2" data-path="applications.html"><a href="applications.html#example-two"><i class="fa fa-check"></i><b>5.2</b> Example two</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>6</b> Final Words</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Omics data analysis in R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="the-beginning-of-the-journey" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Chapter 3</span> The beginning of the journey<a href="the-beginning-of-the-journey.html#the-beginning-of-the-journey" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="day-1" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Day 1<a href="the-beginning-of-the-journey.html#day-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="five-steps-in-omics-data-analysis" class="section level3 hasAnchor" number="3.1.1">
+<h3><span class="header-section-number">3.1.1</span> Five steps in omics data analysis<a href="the-beginning-of-the-journey.html#five-steps-in-omics-data-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Generally speaking, I consider omics data analysis consisting of five steps:</p>
+<ol style="list-style-type: decimal">
+<li>Data generation and collection. Why should we do an omics data analysis? Usually it’s not for fun, though it indeed has a lot of fun.</li>
+</ol>
+<p>Scientific studies usually aim to test a hypothesis, or generate new hypotheses. Usually it’s a combination of both. That is to test a hypothesis, meanwhile to generate new hypotheses.</p>
+<p>Depending on the hypothesis to test or generate, we need different data to answer.</p>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Data quality check and cleaning</p></li>
+<li><p>Data processing.</p></li>
+</ol>
+<p>Sometimes, you need Supercomputerome, such as (<a href="https://www.computerome.dk/">Computerome</a>)</p>
+<ol start="4" style="list-style-type: decimal">
+<li><p>Exploratory data analysis and modelling</p></li>
+<li><p>Visualization and reporting.</p></li>
+</ol>
+<p><strong>Exercise:</strong></p>
+<ol style="list-style-type: decimal">
+<li>Find out what is <a href="www.computerome.dk/">Computerome</a></li>
+<li>Which step(s) of omics data analysis is less familiar to you, and which may be a challenge for you?</li>
+</ol>
+</div>
+<div id="getting-started-with-r" class="section level3 hasAnchor" number="3.1.2">
+<h3><span class="header-section-number">3.1.2</span> Getting started with R<a href="the-beginning-of-the-journey.html#getting-started-with-r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="r-and-rstudio" class="section level4 hasAnchor" number="3.1.2.1">
+<h4><span class="header-section-number">3.1.2.1</span> R and RStudio<a href="the-beginning-of-the-journey.html#r-and-rstudio" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+<div id="cran-and-bioconductor" class="section level4 hasAnchor" number="3.1.2.2">
+<h4><span class="header-section-number">3.1.2.2</span> CRAN and Bioconductor<a href="the-beginning-of-the-journey.html#cran-and-bioconductor" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+</div>
+<div id="statistics" class="section level3 hasAnchor" number="3.1.3">
+<h3><span class="header-section-number">3.1.3</span> Statistics<a href="the-beginning-of-the-journey.html#statistics" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="why-do-we-need-statistics" class="section level4 hasAnchor" number="3.1.3.1">
+<h4><span class="header-section-number">3.1.3.1</span> Why do we need statistics?<a href="the-beginning-of-the-journey.html#why-do-we-need-statistics" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+<div id="classification-and-regression" class="section level4 hasAnchor" number="3.1.3.2">
+<h4><span class="header-section-number">3.1.3.2</span> Classification and regression<a href="the-beginning-of-the-journey.html#classification-and-regression" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+</div>
+</div>
+<div id="day-2" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Day 2<a href="the-beginning-of-the-journey.html#day-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="r-loading-a-package-and-get-help" class="section level3 hasAnchor" number="3.2.1">
+<h3><span class="header-section-number">3.2.1</span> R: loading a package, and get help<a href="the-beginning-of-the-journey.html#r-loading-a-package-and-get-help" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>library and package.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="the-beginning-of-the-journey.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gprofiler2)</span></code></pre></div>
+</div>
+<div id="r-the-basics" class="section level3 hasAnchor" number="3.2.2">
+<h3><span class="header-section-number">3.2.2</span> R: the basics<a href="the-beginning-of-the-journey.html#r-the-basics" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="arithmatic" class="section level4 hasAnchor" number="3.2.2.1">
+<h4><span class="header-section-number">3.2.2.1</span> Arithmatic<a href="the-beginning-of-the-journey.html#arithmatic" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="the-beginning-of-the-journey.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">+</span> <span class="dv">3</span> <span class="sc">*</span> <span class="dv">5</span>       <span class="co"># Note the order of operations.</span></span>
+<span id="cb2-2"><a href="the-beginning-of-the-journey.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(<span class="dv">10</span>)         <span class="co"># Natural logarithm with base e</span></span>
+<span id="cb2-3"><a href="the-beginning-of-the-journey.html#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span><span class="sc">^</span><span class="dv">2</span>             <span class="co"># 5 raised to the second power</span></span>
+<span id="cb2-4"><a href="the-beginning-of-the-journey.html#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span><span class="sc">/</span><span class="dv">2</span>             <span class="co"># Division</span></span>
+<span id="cb2-5"><a href="the-beginning-of-the-journey.html#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="dv">16</span>)        <span class="co"># Square root</span></span>
+<span id="cb2-6"><a href="the-beginning-of-the-journey.html#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">abs</span>(<span class="dv">3-7</span>)        <span class="co"># Absolute value of 3-7</span></span>
+<span id="cb2-7"><a href="the-beginning-of-the-journey.html#cb2-7" aria-hidden="true" tabindex="-1"></a>pi              <span class="co"># The number</span></span>
+<span id="cb2-8"><a href="the-beginning-of-the-journey.html#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">exp</span>(<span class="dv">2</span>)          <span class="co"># exponential function</span></span>
+<span id="cb2-9"><a href="the-beginning-of-the-journey.html#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="dv">28</span><span class="sc">%%</span><span class="dv">6</span>           <span class="co"># Modulo</span></span></code></pre></div>
+<p><strong>Exercise:</strong></p>
+<ul>
+<li><p>Calculate</p>
+<ul>
+<li><p>96 plus 108</p></li>
+<li><p>125 minus 80</p></li>
+<li><p>125 times 5</p></li>
+<li><p>the average of 81 and 82</p></li>
+<li><p>the sum of 199 and 66</p></li>
+<li><p>the difference between 59 and 16</p></li>
+<li><p>the ratio between 67 and 66</p></li>
+<li><p>30 multiplex 46</p></li>
+</ul></li>
+<li><p>Execute <code>log(45)</code> and <code>log2(45)</code> and compare the difference</p></li>
+</ul>
+</div>
+<div id="variation-assignment" class="section level4 hasAnchor" number="3.2.2.2">
+<h4><span class="header-section-number">3.2.2.2</span> Variation assignment<a href="the-beginning-of-the-journey.html#variation-assignment" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="the-beginning-of-the-journey.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Assign the value 42 to x</span></span>
+<span id="cb3-2"><a href="the-beginning-of-the-journey.html#cb3-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">42</span></span>
+<span id="cb3-3"><a href="the-beginning-of-the-journey.html#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="the-beginning-of-the-journey.html#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Print out the value of the variable x</span></span>
+<span id="cb3-5"><a href="the-beginning-of-the-journey.html#cb3-5" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
+<pre><code>## [1] 42</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="the-beginning-of-the-journey.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Assign the value 5 to the variable my_apples</span></span>
+<span id="cb5-2"><a href="the-beginning-of-the-journey.html#cb5-2" aria-hidden="true" tabindex="-1"></a>my_apples <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb5-3"><a href="the-beginning-of-the-journey.html#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="the-beginning-of-the-journey.html#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Print out the value of the variable my_apples</span></span>
+<span id="cb5-5"><a href="the-beginning-of-the-journey.html#cb5-5" aria-hidden="true" tabindex="-1"></a>my_apples</span></code></pre></div>
+<pre><code>## [1] 5</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="the-beginning-of-the-journey.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Assign a value to the variables my_apples and my_oranges</span></span>
+<span id="cb7-2"><a href="the-beginning-of-the-journey.html#cb7-2" aria-hidden="true" tabindex="-1"></a>my_apples <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb7-3"><a href="the-beginning-of-the-journey.html#cb7-3" aria-hidden="true" tabindex="-1"></a>my_oranges <span class="ot">&lt;-</span> <span class="dv">6</span></span>
+<span id="cb7-4"><a href="the-beginning-of-the-journey.html#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="the-beginning-of-the-journey.html#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Add these two variables together</span></span>
+<span id="cb7-6"><a href="the-beginning-of-the-journey.html#cb7-6" aria-hidden="true" tabindex="-1"></a>my_apples <span class="sc">+</span> my_oranges</span></code></pre></div>
+<pre><code>## [1] 11</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="the-beginning-of-the-journey.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the variable my_fruit</span></span>
+<span id="cb9-2"><a href="the-beginning-of-the-journey.html#cb9-2" aria-hidden="true" tabindex="-1"></a>my_fruit <span class="ot">&lt;-</span> my_apples <span class="sc">+</span> my_oranges</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="the-beginning-of-the-journey.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Change my_numeric to be 42</span></span>
+<span id="cb10-2"><a href="the-beginning-of-the-journey.html#cb10-2" aria-hidden="true" tabindex="-1"></a>my_numeric <span class="ot">&lt;-</span> <span class="dv">42</span></span>
+<span id="cb10-3"><a href="the-beginning-of-the-journey.html#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="the-beginning-of-the-journey.html#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Change my_character to be &quot;universe&quot;</span></span>
+<span id="cb10-5"><a href="the-beginning-of-the-journey.html#cb10-5" aria-hidden="true" tabindex="-1"></a>my_character <span class="ot">&lt;-</span> <span class="st">&quot;universe&quot;</span></span>
+<span id="cb10-6"><a href="the-beginning-of-the-journey.html#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="the-beginning-of-the-journey.html#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Change my_logical to be FALSE</span></span>
+<span id="cb10-8"><a href="the-beginning-of-the-journey.html#cb10-8" aria-hidden="true" tabindex="-1"></a>my_logical <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="the-beginning-of-the-journey.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check class of my_numeric</span></span>
+<span id="cb11-2"><a href="the-beginning-of-the-journey.html#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(my_numeric)</span></code></pre></div>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="the-beginning-of-the-journey.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check class of my_character</span></span>
+<span id="cb13-2"><a href="the-beginning-of-the-journey.html#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(my_character)</span></code></pre></div>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="the-beginning-of-the-journey.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check class of my_logical</span></span>
+<span id="cb15-2"><a href="the-beginning-of-the-journey.html#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(my_logical)</span></code></pre></div>
+<pre><code>## [1] &quot;logical&quot;</code></pre>
+</div>
+<div id="vector" class="section level4 hasAnchor" number="3.2.2.3">
+<h4><span class="header-section-number">3.2.2.3</span> vector<a href="the-beginning-of-the-journey.html#vector" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="the-beginning-of-the-journey.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the variable vegas</span></span>
+<span id="cb17-2"><a href="the-beginning-of-the-journey.html#cb17-2" aria-hidden="true" tabindex="-1"></a>vegas <span class="ot">&lt;-</span> <span class="st">&quot;Go!&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="the-beginning-of-the-journey.html#cb18-1" aria-hidden="true" tabindex="-1"></a>numeric_vector <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">10</span>, <span class="dv">49</span>)</span>
+<span id="cb18-2"><a href="the-beginning-of-the-journey.html#cb18-2" aria-hidden="true" tabindex="-1"></a>character_vector <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>)</span>
+<span id="cb18-3"><a href="the-beginning-of-the-journey.html#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="the-beginning-of-the-journey.html#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Complete the code for boolean_vector</span></span>
+<span id="cb18-5"><a href="the-beginning-of-the-journey.html#cb18-5" aria-hidden="true" tabindex="-1"></a>boolean_vector <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="cn">TRUE</span>,<span class="cn">FALSE</span>,<span class="cn">TRUE</span>)</span>
+<span id="cb18-6"><a href="the-beginning-of-the-journey.html#cb18-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-7"><a href="the-beginning-of-the-journey.html#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Poker winnings from Monday to Friday</span></span>
+<span id="cb18-8"><a href="the-beginning-of-the-journey.html#cb18-8" aria-hidden="true" tabindex="-1"></a>poker_vector <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">140</span>, <span class="sc">-</span><span class="dv">50</span>, <span class="dv">20</span>, <span class="sc">-</span><span class="dv">120</span>, <span class="dv">240</span>)</span>
+<span id="cb18-9"><a href="the-beginning-of-the-journey.html#cb18-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-10"><a href="the-beginning-of-the-journey.html#cb18-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Roulette winnings from Monday to Friday</span></span>
+<span id="cb18-11"><a href="the-beginning-of-the-journey.html#cb18-11" aria-hidden="true" tabindex="-1"></a>roulette_vector <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">24</span>, <span class="sc">-</span><span class="dv">50</span>, <span class="dv">100</span>, <span class="sc">-</span><span class="dv">350</span>, <span class="dv">10</span>)</span>
+<span id="cb18-12"><a href="the-beginning-of-the-journey.html#cb18-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-13"><a href="the-beginning-of-the-journey.html#cb18-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Assign days as names of poker_vector</span></span>
+<span id="cb18-14"><a href="the-beginning-of-the-journey.html#cb18-14" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(poker_vector) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Monday&quot;</span>, <span class="st">&quot;Tuesday&quot;</span>, <span class="st">&quot;Wednesday&quot;</span>, <span class="st">&quot;Thursday&quot;</span>, <span class="st">&quot;Friday&quot;</span>)</span>
+<span id="cb18-15"><a href="the-beginning-of-the-journey.html#cb18-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-16"><a href="the-beginning-of-the-journey.html#cb18-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Assign days as names of roulette_vector</span></span>
+<span id="cb18-17"><a href="the-beginning-of-the-journey.html#cb18-17" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(roulette_vector)<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">&quot;Monday&quot;</span>, <span class="st">&quot;Tuesday&quot;</span>, <span class="st">&quot;Wednesday&quot;</span>, <span class="st">&quot;Thursday&quot;</span>, <span class="st">&quot;Friday&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="the-beginning-of-the-journey.html#cb19-1" aria-hidden="true" tabindex="-1"></a>A_vector <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb19-2"><a href="the-beginning-of-the-journey.html#cb19-2" aria-hidden="true" tabindex="-1"></a>B_vector <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>)</span>
+<span id="cb19-3"><a href="the-beginning-of-the-journey.html#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="the-beginning-of-the-journey.html#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Take the sum of A_vector and B_vector</span></span>
+<span id="cb19-5"><a href="the-beginning-of-the-journey.html#cb19-5" aria-hidden="true" tabindex="-1"></a>total_vector <span class="ot">&lt;-</span> A_vector<span class="sc">+</span>B_vector</span>
+<span id="cb19-6"><a href="the-beginning-of-the-journey.html#cb19-6" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb19-7"><a href="the-beginning-of-the-journey.html#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Print out total_vector</span></span>
+<span id="cb19-8"><a href="the-beginning-of-the-journey.html#cb19-8" aria-hidden="true" tabindex="-1"></a>total_vector</span></code></pre></div>
+<pre><code>## [1] 5 7 9</code></pre>
+
+</div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="methods.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/02-literature.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -1,0 +1,182 @@
+# The beginning of the journey
+
+## Day 1
+
+### Five steps in omics data analysis
+
+Generally speaking, I consider omics data analysis consisting of five steps:
+
+(1) Data generation and collection. Why should we do an omics data analysis? Usually it's not for fun, though it indeed has a lot of fun.
+
+Scientific studies usually aim to test a hypothesis, or generate new hypotheses. Usually it's a combination of both. That is to test a hypothesis, meanwhile to generate new hypotheses.
+
+Depending on the hypothesis to test or generate, we need different data to answer.
+
+(2) Data quality check and cleaning
+
+(3) Data processing.
+
+Sometimes, you need Supercomputerome, such as ([Computerome](https://www.computerome.dk/))
+
+(4) Exploratory data analysis and modelling
+
+(5) Visualization and reporting.
+
+**Exercise:**
+
+1.  Find out what is [Computerome](www.computerome.dk/)
+2.  Which step(s) of omics data analysis is less familiar to you, and which may be a challenge for you?
+
+### Getting started with R
+
+#### R and RStudio
+
+#### CRAN and Bioconductor
+
+### Statistics
+
+#### Why do we need statistics?
+
+#### Classification and regression
+
+## Day 2
+
+### R: loading a package, and get help
+
+library and package.
+
+```{r day 2 load a library}
+library(gprofiler2)
+library(ggplot2)
+library(dplyr)
+```
+
+### R: the basics
+
+#### Arithmatic
+
+```{r eval=FALSE}
+2 + 3 * 5       # Note the order of operations.
+log(10)         # Natural logarithm with base e
+5^2             # 5 raised to the second power
+3/2             # Division
+sqrt(16)        # Square root
+abs(3-7)        # Absolute value of 3-7
+pi              # The number
+exp(2)          # exponential function
+28%%6           # Modulo
+```
+
+**Exercise:**
+
+-   Calculate
+
+    -   `r round(runif(1, min = -0, max = 200))` plus `r round(runif(1, min = -0, max = 200))`
+
+    -   `r round(runif(1, min = -0, max = 200))` minus `r round(runif(1, min = -0, max = 200))`
+
+    -   `r round(runif(1, min = -0, max = 200))` times `r round(runif(1, min = -0, max = 200))`
+
+    -   the average of `r round(runif(1, min = -0, max = 200))` and `r round(runif(1, min = -0, max = 200))`
+
+    -   the sum of `r round(runif(1, min = -0, max = 200))` and `r round(runif(1, min = -0, max = 200))`
+
+    -   the difference between `r round(runif(1, min = -0, max = 200))` and `r round(runif(1, min = -0, max = 100))`
+
+    -   the ratio between `r round(runif(1, min = -0, max = 200))` and `r round(runif(1, min = -0, max = 200))`
+
+    -   `r round(runif(1, min = -0, max = 50))` multiplex `r round(runif(1, min = -0, max = 200))`
+
+-   Execute `log(45)` and `log2(45)` and compare the difference. Note: you can get help using `help(log)` and `help(log2)`
+
+#### Variable assignment
+
+```{r}
+# Assign the value 42 to x
+x <- 42
+
+# Print out the value of the variable x
+x
+```
+
+```{r}
+# Assign the value 5 to the variable my_apples
+my_apples <- 5
+
+# Print out the value of the variable my_apples
+my_apples
+```
+
+```{r}
+# Assign a value to the variables my_apples and my_oranges
+my_apples <- 5
+my_oranges <- 6
+
+# Add these two variables together
+my_apples + my_oranges
+
+# Create the variable my_fruit
+my_fruit <- my_apples + my_oranges
+```
+
+#### Variable type
+
+```{r}
+# Change my_numeric to be 42
+my_numeric <- 42
+
+# Change my_character to be "universe"
+my_character <- "universe"
+
+# Change my_logical to be FALSE
+my_logical <- FALSE
+```
+
+```{r}
+# Check class of my_numeric
+class(my_numeric)
+
+# Check class of my_character
+class(my_character)
+
+# Check class of my_logical
+class(my_logical)
+```
+
+#### vector
+
+```{r}
+# Define the variable vegas
+vegas <- "Go!"
+```
+
+```{r}
+numeric_vector <- c(1, 10, 49)
+character_vector <- c("a", "b", "c")
+
+# Complete the code for boolean_vector
+boolean_vector <-c(TRUE,FALSE,TRUE)
+
+# Poker winnings from Monday to Friday
+poker_vector <- c(140, -50, 20, -120, 240)
+
+# Roulette winnings from Monday to Friday
+roulette_vector <- c(-24, -50, 100, -350, 10)
+
+# Assign days as names of poker_vector
+names(poker_vector) <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
+
+# Assign days as names of roulette_vector
+names(roulette_vector)<-c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
+```
+
+```{r}
+A_vector <- c(1, 2, 3)
+B_vector <- c(4, 5, 6)
+
+# Take the sum of A_vector and B_vector
+total_vector <- A_vector+B_vector
+  
+# Print out total_vector
+total_vector
+```
