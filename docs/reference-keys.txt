@@ -21,3 +21,11 @@ vector
 introduction
 motivation
 acknowledgement
+day-3
+recap-1
+vector-1
+vector-named-vector-vector-comparison
+matrix
+data-frames
+matrix-excerpted-from-akalin2020a
+data-frames-excerpted-from-akalin2020a

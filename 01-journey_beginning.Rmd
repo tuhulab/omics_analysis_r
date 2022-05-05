@@ -37,9 +37,9 @@ Sometimes, you need Supercomputerome, such as ([Computerome](https://www.compute
 
 -   CRAN vs. Bioconductor
 
-  -   CRAN: R core team; general purpose statistics
-  
-  -   Bioconductor: reviewed; for biology
+-   CRAN: R core team; general purpose statistics
+
+-   Bioconductor: reviewed; for biology
 
 ### Statistics
 
@@ -106,11 +106,9 @@ exp(2)          # exponential function
 
 -   Execute `log(45)` and `log2(45)` and compare the difference. Note: you can get help using `help(log)` and `help(log2)`
 
--   A gene expression: CO (mean: 12) TRET (mean: 50) 
-upregulated; Log2 fold change: `r log2(50/12)`
+-   A gene expression: CO (mean: 12) TRET (mean: 50) upregulated; Log2 fold change: `r log2(50/12)`
 
--   B gene expression: CO (mean: 50) TEAT (mean: 12)
-downregulated; Log2 fold change: `r log2(12/50)`
+-   B gene expression: CO (mean: 50) TEAT (mean: 12) downregulated; Log2 fold change: `r log2(12/50)`
 
 -   log computes logarithms, by default natural logarithms, log10 computes common (i.e., base 10) logarithms, and log2 computes binary (i.e., base 2) logarithms. The general form log(x, base) computes logarithms with base base.
 
@@ -122,13 +120,11 @@ downregulated; Log2 fold change: `r log2(12/50)`
 
 ```
 
-
 #### Variable assignment
 
 ```{r, eval=FALSE}
 # Assign the value 42 to x
-x <- 42
-
+x <- 68
 # Print out the value of the variable x
 x
 ```
@@ -136,7 +132,6 @@ x
 ```{r, eval=FALSE}
 # Assign the value 5 to the variable my_apples
 my_apples <- 5
-
 # Print out the value of the variable my_apples
 my_apples
 ```
@@ -145,10 +140,8 @@ my_apples
 # Assign a value to the variables my_apples and my_oranges
 my_apples <- 5
 my_oranges <- 6
-
 # Add these two variables together
 my_apples + my_oranges
-
 # Create the variable my_fruit
 my_fruit <- my_apples + my_oranges
 ```
@@ -158,10 +151,8 @@ my_fruit <- my_apples + my_oranges
 ```{r, eval=FALSE}
 # Change my_numeric to be 42
 my_numeric <- 42
-
 # Change my_character to be "universe"
 my_character <- "universe"
-
 # Change my_logical to be FALSE
 my_logical <- FALSE
 ```
@@ -169,44 +160,40 @@ my_logical <- FALSE
 ```{r, eval=FALSE}
 # Check class of my_numeric
 class(my_numeric)
-
 # Check class of my_character
 class(my_character)
-
 # Check class of my_logical
 class(my_logical)
 ```
 
-```{r}
+<!-- exercise -->
+
+**Exercise:**
+
+Test out the following code, and figure out what do they mean?
+
+```{r eval=FALSE}
 logic_1 <- TRUE
 logic_2 <- "TRUE"
 logic_3 <- "True"
 ```
 
-```{r}
+```{r eval=FALSE}
 2 == 3
 logic_1 == logic_2
 logic_2 == logic_3
 logic_1 == logic_3
 logic_1 == 1
+```
 
+```{r eval=FALSE}
 1 < 2
 1 > 2
 1 == 2
-
 1 != 2 # (not equal to)
-
-
 ```
 
-
-
-#### vector
-
-```{r, eval=FALSE}
-# Define the variable vegas
-vegas <- "Go!"
-```
+#### Vector
 
 ```{r, eval=FALSE}
 numeric_vector <- c(1, 10, 49)
@@ -247,3 +234,104 @@ Recap
 -   variable
 
 -   class: numeric, character, logical
+
+## Day 3
+
+### Recap
+
+1.  Read the following paragraph clipped from `help(log)`, and reflect what does it mean?
+
+    log computes logarithms, by default natural logarithms, log10 computes common (i.e., base 10) logarithms, and log2 computes binary (i.e., base 2) logarithms. The general form log(x, base) computes logarithms with base base.
+
+2.  Assuming **FLG** (filaggrin, a gene coding an important skin barrier protein) has an average expression (count) of 500 in healthy control, and 200 in the disease group. How to calculate `log2 fold change (log2 FC)`? Think both mathematically, and in R.
+
+3.  If FLG is downregulated in atopic dermatitis skin disease, what does it mean?
+
+4.  What is vector recycling in R? What could be the consequence?
+
+5.  What do these signs mean in R?
+
+        != 
+        ==
+        <
+        >
+        ?
+        >=
+        <=
+        <-
+
+### Vector, named vector, vector comparison
+
+In an experiment, we measured 8 biomarkers and stored theirs values in two variables (CO and TRET). How can I compare these 8 biomarkers in two conditions?
+
+Use this code to generate CO and TRET
+
+```{r vector comparison, result = 'hide'}
+n <- 8
+CO <- round(runif(n, 0, 100))
+TRET <- round(runif(n, 0, 100))
+names(CO) <- paste("biomarker", 1: n)
+names(TRET) <- paste("biomarker", 1: n)
+```
+
+```{r}
+CO
+TRET
+```
+
+```{r include=FALSE}
+CO < TRET
+TRET - CO
+```
+
+### Matrix (excerpted from [@akalin2020a])
+
+```{r eval=FALSE}
+?matrix
+```
+
+A matrix refers to a numeric array of rows and columns. You can think of it as a stacked version of vectors where each row or column is a vector. One of the easiest ways to create a matrix is to combine vectors of equal length using `cbind()`, meaning 'column bind'.\index{R Programming Language!matrix}
+
+```{r matrices}
+x<-c(1,2,3,4)
+y<-c(4,5,6,7)
+m1<-cbind(x,y);m1
+t(m1)                # transpose of m1
+dim(m1)              # 2 by 5 matrix
+```
+
+You can also directly list the elements and specify the matrix:
+
+```{r matrix2}
+m2<-matrix(c(1,3,2,5,-1,2,2,3,9),nrow=3)
+m2
+```
+
+Matrices and the next data structure, **data frames**, are tabular data structures. You can subset them using `[]` and providing desired rows and columns to subset. Figure \@ref(fig:slicingDataFrames) shows how that works conceptually.
+
+### Data frames (excerpted from [@akalin2020a])
+
+A data frame is more general than a matrix, in that different columns can have different modes (numeric, character, factor, etc.). A data frame can be constructed by the `data.frame()` function. For example, we illustrate how to construct a data frame from genomic intervals or coordinates.\index{R Programming Language!data frame}
+
+```{r dfcreate}
+chr <- c("chr1", "chr1", "chr2", "chr2")
+strand <- c("-","-","+","+")
+start<- c(200,4000,100,400)
+end<-c(250,410,200,450)
+mydata <- data.frame(chr,start,end,strand)
+#change column names
+names(mydata) <- c("chr","start","end","strand")
+mydata # OR this will work too
+mydata <- data.frame(chr=chr,start=start,end=end,strand=strand)
+mydata
+```
+
+There are a variety of ways to extract the elements of a data frame. You can extract certain columns using column numbers or names, or you can extract certain rows by using row numbers. You can also extract data using logical arguments, such as extracting all rows that have a value in a column larger than your threshold.
+
+```{r dfSlice}
+mydata[,2:4] # columns 2,3,4 of data frame
+mydata[,c("chr","start")] # columns chr and start from data frame
+mydata$start # variable start in the data frame
+mydata[c(1,3),] # get 1st and 3rd rows
+mydata[mydata$start>400,] # get all rows where start>400
+```
