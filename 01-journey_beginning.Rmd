@@ -241,7 +241,7 @@ Recap
 
 1.  Read the following paragraph clipped from `help(log)`, and reflect what does it mean?
 
-    log computes logarithms, by default natural logarithms, log10 computes common (i.e., base 10) logarithms, and log2 computes binary (i.e., base 2) logarithms. The general form log(x, base) computes logarithms with base base.
+    > log computes logarithms, by default natural logarithms, log10 computes common (i.e., base 10) logarithms, and log2 computes binary (i.e., base 2) logarithms. The general form log(x, base) computes logarithms with base base.
 
 2.  Assuming **FLG** (filaggrin, a gene coding an important skin barrier protein) has an average expression (count) of 500 in healthy control, and 200 in the disease group. How to calculate `log2 fold change (log2 FC)`? Think both mathematically, and in R.
 

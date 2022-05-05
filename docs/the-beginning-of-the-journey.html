@@ -291,14 +291,14 @@ div.csl-indent {
 <ul>
 <li><p>Calculate</p>
 <ul>
-<li><p>7 plus 121</p></li>
-<li><p>57 minus 106</p></li>
-<li><p>18 times 35</p></li>
-<li><p>the average of 30 and 199</p></li>
-<li><p>the sum of 134 and 173</p></li>
-<li><p>the difference between 100 and 81</p></li>
-<li><p>the ratio between 121 and 176</p></li>
-<li><p>26 multiply 144</p></li>
+<li><p>139 plus 122</p></li>
+<li><p>37 minus 17</p></li>
+<li><p>91 times 30</p></li>
+<li><p>the average of 27 and 19</p></li>
+<li><p>the sum of 53 and 177</p></li>
+<li><p>the difference between 194 and 23</p></li>
+<li><p>the ratio between 14 and 84</p></li>
+<li><p>47 multiply 164</p></li>
 </ul></li>
 <li><p>Execute <code>log(45)</code> and <code>log2(45)</code> and compare the difference. Note: you can get help using <code>help(log)</code> and <code>help(log2)</code></p></li>
 <li><p>A gene expression: CO (mean: 12) TRET (mean: 50) upregulated; Log2 fold change: 2.0588937</p></li>
@@ -398,7 +398,9 @@ div.csl-indent {
 <h3><span class="header-section-number">2.3.1</span> Recap<a href="the-beginning-of-the-journey.html#recap-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ol style="list-style-type: decimal">
 <li><p>Read the following paragraph clipped from <code>help(log)</code>, and reflect what does it mean?</p>
-<p>log computes logarithms, by default natural logarithms, log10 computes common (i.e., base 10) logarithms, and log2 computes binary (i.e., base 2) logarithms. The general form log(x, base) computes logarithms with base base.</p></li>
+<blockquote>
+<p>log computes logarithms, by default natural logarithms, log10 computes common (i.e., base 10) logarithms, and log2 computes binary (i.e., base 2) logarithms. The general form log(x, base) computes logarithms with base base.</p>
+</blockquote></li>
 <li><p>Assuming <strong>FLG</strong> (filaggrin, a gene coding an important skin barrier protein) has an average expression (count) of 500 in healthy control, and 200 in the disease group. How to calculate <code>log2 fold change (log2 FC)</code>? Think both mathematically, and in R.</p></li>
 <li><p>If FLG is downregulated in atopic dermatitis skin disease, what does it mean?</p></li>
 <li><p>What is vector recycling in R? What could be the consequence?</p></li>
@@ -424,14 +426,14 @@ div.csl-indent {
 <span id="cb14-5"><a href="the-beginning-of-the-journey.html#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(TRET) <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="st">&quot;biomarker&quot;</span>, <span class="dv">1</span><span class="sc">:</span> n)</span></code></pre></div>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="the-beginning-of-the-journey.html#cb15-1" aria-hidden="true" tabindex="-1"></a>CO</span></code></pre></div>
 <pre><code>## biomarker 1 biomarker 2 biomarker 3 biomarker 4 biomarker 5 biomarker 6 
-##          16          47          86          53          40          85 
+##          51          96           2          23          75          55 
 ## biomarker 7 biomarker 8 
-##          20          78</code></pre>
+##          27          83</code></pre>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="the-beginning-of-the-journey.html#cb17-1" aria-hidden="true" tabindex="-1"></a>TRET</span></code></pre></div>
 <pre><code>## biomarker 1 biomarker 2 biomarker 3 biomarker 4 biomarker 5 biomarker 6 
-##           3         100          69          56          89          67 
+##          18          91          94          78          80          20 
 ## biomarker 7 biomarker 8 
-##          11          34</code></pre>
+##          65          36</code></pre>
 </div>
 <div id="matrix-excerpted-from-akalin2020a" class="section level3 hasAnchor" number="2.3.3">
 <h3><span class="header-section-number">2.3.3</span> Matrix (excerpted from <span class="citation">(<a href="#ref-akalin2020a" role="doc-biblioref">Akalin 2020</a>)</span>)<a href="the-beginning-of-the-journey.html#matrix-excerpted-from-akalin2020a" class="anchor-section" aria-label="Anchor link to header"></a></h3>
