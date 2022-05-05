@@ -23,7 +23,7 @@
 <meta name="author" content="Tu Hu" />
 
 
-<meta name="date" content="2022-05-04" />
+<meta name="date" content="2022-05-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -285,20 +285,21 @@ div.csl-indent {
 <ul>
 <li><p>Calculate</p>
 <ul>
-<li><p>3 plus 73</p></li>
-<li><p>183 minus 139</p></li>
-<li><p>8 times 190</p></li>
-<li><p>the average of 188 and 12</p></li>
-<li><p>the sum of 61 and 136</p></li>
-<li><p>the difference between 152 and 6</p></li>
-<li><p>the ratio between 162 and 148</p></li>
-<li><p>10 multiply 142</p></li>
+<li><p>157 plus 108</p></li>
+<li><p>4 minus 150</p></li>
+<li><p>60 times 83</p></li>
+<li><p>the average of 36 and 1</p></li>
+<li><p>the sum of 189 and 110</p></li>
+<li><p>the difference between 113 and 14</p></li>
+<li><p>the ratio between 184 and 144</p></li>
+<li><p>33 multiply 33</p></li>
 </ul></li>
 <li><p>Execute <code>log(45)</code> and <code>log2(45)</code> and compare the difference. Note: you can get help using <code>help(log)</code> and <code>help(log2)</code></p></li>
 <li><p>A gene expression: CO (mean: 12) TRET (mean: 50)
 upregulated; Log2 fold change: 2.0588937</p></li>
 <li><p>B gene expression: CO (mean: 50) TEAT (mean: 12)
 downregulated; Log2 fold change: -2.0588937</p></li>
+<li><p>log computes logarithms, by default natural logarithms, log10 computes common (i.e., base 10) logarithms, and log2 computes binary (i.e., base 2) logarithms. The general form log(x, base) computes logarithms with base base.</p></li>
 </ul>
 </div>
 <div id="variable-assignment" class="section level4 hasAnchor" number="3.2.3.2">
@@ -341,36 +342,65 @@ downregulated; Log2 fold change: -2.0588937</p></li>
 <span id="cb7-6"><a href="the-beginning-of-the-journey.html#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-7"><a href="the-beginning-of-the-journey.html#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Check class of my_logical</span></span>
 <span id="cb7-8"><a href="the-beginning-of-the-journey.html#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(my_logical)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="the-beginning-of-the-journey.html#cb8-1" aria-hidden="true" tabindex="-1"></a>logic_1 <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb8-2"><a href="the-beginning-of-the-journey.html#cb8-2" aria-hidden="true" tabindex="-1"></a>logic_2 <span class="ot">&lt;-</span> <span class="st">&quot;TRUE&quot;</span></span>
+<span id="cb8-3"><a href="the-beginning-of-the-journey.html#cb8-3" aria-hidden="true" tabindex="-1"></a>logic_3 <span class="ot">&lt;-</span> <span class="st">&quot;True&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="the-beginning-of-the-journey.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">==</span> <span class="dv">3</span></span></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="the-beginning-of-the-journey.html#cb11-1" aria-hidden="true" tabindex="-1"></a>logic_1 <span class="sc">==</span> logic_2</span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="the-beginning-of-the-journey.html#cb13-1" aria-hidden="true" tabindex="-1"></a>logic_2 <span class="sc">==</span> logic_3</span></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="the-beginning-of-the-journey.html#cb15-1" aria-hidden="true" tabindex="-1"></a>logic_1 <span class="sc">==</span> logic_3</span></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="the-beginning-of-the-journey.html#cb17-1" aria-hidden="true" tabindex="-1"></a>logic_1 <span class="sc">==</span> <span class="dv">1</span></span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="the-beginning-of-the-journey.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">&lt;</span> <span class="dv">2</span></span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="the-beginning-of-the-journey.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">&gt;</span> <span class="dv">2</span></span></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="the-beginning-of-the-journey.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">==</span> <span class="dv">2</span></span></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="the-beginning-of-the-journey.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">!=</span> <span class="dv">2</span> <span class="co"># (not equal to)</span></span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
 </div>
 <div id="vector" class="section level4 hasAnchor" number="3.2.3.4">
 <h4><span class="header-section-number">3.2.3.4</span> vector<a href="the-beginning-of-the-journey.html#vector" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="the-beginning-of-the-journey.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the variable vegas</span></span>
-<span id="cb8-2"><a href="the-beginning-of-the-journey.html#cb8-2" aria-hidden="true" tabindex="-1"></a>vegas <span class="ot">&lt;-</span> <span class="st">&quot;Go!&quot;</span></span></code></pre></div>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="the-beginning-of-the-journey.html#cb9-1" aria-hidden="true" tabindex="-1"></a>numeric_vector <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">10</span>, <span class="dv">49</span>)</span>
-<span id="cb9-2"><a href="the-beginning-of-the-journey.html#cb9-2" aria-hidden="true" tabindex="-1"></a>character_vector <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>)</span>
-<span id="cb9-3"><a href="the-beginning-of-the-journey.html#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-4"><a href="the-beginning-of-the-journey.html#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Complete the code for boolean_vector</span></span>
-<span id="cb9-5"><a href="the-beginning-of-the-journey.html#cb9-5" aria-hidden="true" tabindex="-1"></a>boolean_vector <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="cn">TRUE</span>,<span class="cn">FALSE</span>,<span class="cn">TRUE</span>)</span>
-<span id="cb9-6"><a href="the-beginning-of-the-journey.html#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-7"><a href="the-beginning-of-the-journey.html#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Poker winnings from Monday to Friday</span></span>
-<span id="cb9-8"><a href="the-beginning-of-the-journey.html#cb9-8" aria-hidden="true" tabindex="-1"></a>poker_vector <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">140</span>, <span class="sc">-</span><span class="dv">50</span>, <span class="dv">20</span>, <span class="sc">-</span><span class="dv">120</span>, <span class="dv">240</span>)</span>
-<span id="cb9-9"><a href="the-beginning-of-the-journey.html#cb9-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-10"><a href="the-beginning-of-the-journey.html#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Roulette winnings from Monday to Friday</span></span>
-<span id="cb9-11"><a href="the-beginning-of-the-journey.html#cb9-11" aria-hidden="true" tabindex="-1"></a>roulette_vector <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">24</span>, <span class="sc">-</span><span class="dv">50</span>, <span class="dv">100</span>, <span class="sc">-</span><span class="dv">350</span>, <span class="dv">10</span>)</span>
-<span id="cb9-12"><a href="the-beginning-of-the-journey.html#cb9-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-13"><a href="the-beginning-of-the-journey.html#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Assign days as names of poker_vector</span></span>
-<span id="cb9-14"><a href="the-beginning-of-the-journey.html#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(poker_vector) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Monday&quot;</span>, <span class="st">&quot;Tuesday&quot;</span>, <span class="st">&quot;Wednesday&quot;</span>, <span class="st">&quot;Thursday&quot;</span>, <span class="st">&quot;Friday&quot;</span>)</span>
-<span id="cb9-15"><a href="the-beginning-of-the-journey.html#cb9-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-16"><a href="the-beginning-of-the-journey.html#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Assign days as names of roulette_vector</span></span>
-<span id="cb9-17"><a href="the-beginning-of-the-journey.html#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(roulette_vector)<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">&quot;Monday&quot;</span>, <span class="st">&quot;Tuesday&quot;</span>, <span class="st">&quot;Wednesday&quot;</span>, <span class="st">&quot;Thursday&quot;</span>, <span class="st">&quot;Friday&quot;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="the-beginning-of-the-journey.html#cb10-1" aria-hidden="true" tabindex="-1"></a>A_vector <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
-<span id="cb10-2"><a href="the-beginning-of-the-journey.html#cb10-2" aria-hidden="true" tabindex="-1"></a>B_vector <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>)</span>
-<span id="cb10-3"><a href="the-beginning-of-the-journey.html#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-4"><a href="the-beginning-of-the-journey.html#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Take the sum of A_vector and B_vector</span></span>
-<span id="cb10-5"><a href="the-beginning-of-the-journey.html#cb10-5" aria-hidden="true" tabindex="-1"></a>total_vector <span class="ot">&lt;-</span> A_vector<span class="sc">+</span>B_vector</span>
-<span id="cb10-6"><a href="the-beginning-of-the-journey.html#cb10-6" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb10-7"><a href="the-beginning-of-the-journey.html#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Print out total_vector</span></span>
-<span id="cb10-8"><a href="the-beginning-of-the-journey.html#cb10-8" aria-hidden="true" tabindex="-1"></a>total_vector</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="the-beginning-of-the-journey.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the variable vegas</span></span>
+<span id="cb27-2"><a href="the-beginning-of-the-journey.html#cb27-2" aria-hidden="true" tabindex="-1"></a>vegas <span class="ot">&lt;-</span> <span class="st">&quot;Go!&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="the-beginning-of-the-journey.html#cb28-1" aria-hidden="true" tabindex="-1"></a>numeric_vector <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">10</span>, <span class="dv">49</span>)</span>
+<span id="cb28-2"><a href="the-beginning-of-the-journey.html#cb28-2" aria-hidden="true" tabindex="-1"></a>character_vector <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>)</span>
+<span id="cb28-3"><a href="the-beginning-of-the-journey.html#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-4"><a href="the-beginning-of-the-journey.html#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Complete the code for boolean_vector</span></span>
+<span id="cb28-5"><a href="the-beginning-of-the-journey.html#cb28-5" aria-hidden="true" tabindex="-1"></a>boolean_vector <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="cn">TRUE</span>,<span class="cn">FALSE</span>,<span class="cn">TRUE</span>)</span>
+<span id="cb28-6"><a href="the-beginning-of-the-journey.html#cb28-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-7"><a href="the-beginning-of-the-journey.html#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Poker winnings from Monday to Friday</span></span>
+<span id="cb28-8"><a href="the-beginning-of-the-journey.html#cb28-8" aria-hidden="true" tabindex="-1"></a>poker_vector <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">140</span>, <span class="sc">-</span><span class="dv">50</span>, <span class="dv">20</span>, <span class="sc">-</span><span class="dv">120</span>, <span class="dv">240</span>)</span>
+<span id="cb28-9"><a href="the-beginning-of-the-journey.html#cb28-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-10"><a href="the-beginning-of-the-journey.html#cb28-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Roulette winnings from Monday to Friday</span></span>
+<span id="cb28-11"><a href="the-beginning-of-the-journey.html#cb28-11" aria-hidden="true" tabindex="-1"></a>roulette_vector <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">24</span>, <span class="sc">-</span><span class="dv">50</span>, <span class="dv">100</span>, <span class="sc">-</span><span class="dv">350</span>, <span class="dv">10</span>)</span>
+<span id="cb28-12"><a href="the-beginning-of-the-journey.html#cb28-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-13"><a href="the-beginning-of-the-journey.html#cb28-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Assign days as names of poker_vector</span></span>
+<span id="cb28-14"><a href="the-beginning-of-the-journey.html#cb28-14" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(poker_vector) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Monday&quot;</span>, <span class="st">&quot;Tuesday&quot;</span>, <span class="st">&quot;Wednesday&quot;</span>, <span class="st">&quot;Thursday&quot;</span>, <span class="st">&quot;Friday&quot;</span>)</span>
+<span id="cb28-15"><a href="the-beginning-of-the-journey.html#cb28-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-16"><a href="the-beginning-of-the-journey.html#cb28-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Assign days as names of roulette_vector</span></span>
+<span id="cb28-17"><a href="the-beginning-of-the-journey.html#cb28-17" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(roulette_vector)<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">&quot;Monday&quot;</span>, <span class="st">&quot;Tuesday&quot;</span>, <span class="st">&quot;Wednesday&quot;</span>, <span class="st">&quot;Thursday&quot;</span>, <span class="st">&quot;Friday&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="the-beginning-of-the-journey.html#cb29-1" aria-hidden="true" tabindex="-1"></a>A_vector <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb29-2"><a href="the-beginning-of-the-journey.html#cb29-2" aria-hidden="true" tabindex="-1"></a>B_vector <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>)</span>
+<span id="cb29-3"><a href="the-beginning-of-the-journey.html#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-4"><a href="the-beginning-of-the-journey.html#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Take the sum of A_vector and B_vector</span></span>
+<span id="cb29-5"><a href="the-beginning-of-the-journey.html#cb29-5" aria-hidden="true" tabindex="-1"></a>total_vector <span class="ot">&lt;-</span> A_vector <span class="sc">+</span> B_vector</span>
+<span id="cb29-6"><a href="the-beginning-of-the-journey.html#cb29-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-7"><a href="the-beginning-of-the-journey.html#cb29-7" aria-hidden="true" tabindex="-1"></a>C_vector <span class="ot">&lt;-</span> <span class="fu">c</span>(A_vector, A_vector)</span>
+<span id="cb29-8"><a href="the-beginning-of-the-journey.html#cb29-8" aria-hidden="true" tabindex="-1"></a>D_vector <span class="ot">&lt;-</span> <span class="fu">c</span>(A_vector, B_vector)</span>
+<span id="cb29-9"><a href="the-beginning-of-the-journey.html#cb29-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-10"><a href="the-beginning-of-the-journey.html#cb29-10" aria-hidden="true" tabindex="-1"></a>A_vector <span class="sc">*</span> B_vector</span>
+<span id="cb29-11"><a href="the-beginning-of-the-journey.html#cb29-11" aria-hidden="true" tabindex="-1"></a>A_vector <span class="sc">+</span> <span class="dv">1</span> </span></code></pre></div>
+<p>Recap</p>
+<ul>
+<li><p>variable</p></li>
+<li><p>class: numeric, character, logical</p></li>
+</ul>
 
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div class="csl-entry">
