@@ -2,7 +2,7 @@
 title: "Omics data analysis in R"
 subtitle: "A textbook for biologists like my wife"
 author: "Tu Hu"
-date: "`r Sys.Date()`"
+date: "last updated on `r Sys.Date()`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
